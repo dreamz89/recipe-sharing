@@ -9,7 +9,7 @@ CI/CD: **Jenkins**
 Hosting: **Netlify**  
 Styling: **Tailwind CSS**  
 CMS: **Contentful**
-Tooling: **Vite, Eslint, Prettier, Husky, Commitlint**
+Tooling: **Vite, Eslint, Prettier, Husky**
 
 ## Design
 
