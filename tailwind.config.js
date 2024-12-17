@@ -28,7 +28,11 @@ export default {
       success: '#1B998B',
       info: '#FED766',
     },
-    extend: {},
+    extend: {
+      screens: {
+        sm: '576px'
+      },
+    },
   },
   plugins: [],
 }

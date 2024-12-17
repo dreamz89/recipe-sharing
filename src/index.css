@@ -82,24 +82,40 @@
     }
   }
 
-  @layer components {
-    .btn-primary {
-      @apply hover:bg-orange500 bg-orange400 flex h-10 items-center rounded-3xl px-5 leading-none text-white;
-    }
-
-    .btn-secondary {
-      @apply hover:text-orange500 text-orange400 border-orange400 hover:border-orange500 flex h-10 items-center rounded-3xl border bg-white px-5 leading-none;
-    }
-
-    .btn-tertiary,
-    .text-link {
-      @apply text-orange400 hover:text-orange500 underline underline-offset-4;
-    }
+  h1 {
+    @apply text-4xl font-bold;
   }
 
-  @layer utilities {
-    .container {
-      @apply mx-auto w-full max-w-screen-xl px-4;
-    }
+  h2 {
+    @apply text-[32px] font-bold leading-9;
+  }
+
+  h3 {
+    @apply text-[28px] font-bold leading-9;
+  }
+
+  h4 {
+    @apply text-2xl font-bold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply hover:bg-orange500 bg-orange400 inline-flex h-10 items-center rounded-3xl px-5 leading-none text-white;
+  }
+
+  .btn-secondary {
+    @apply hover:text-orange500 text-orange400 border-orange400 hover:border-orange500 inline-flex h-10 items-center rounded-3xl border bg-white px-5 leading-none;
+  }
+
+  .btn-tertiary,
+  .text-link {
+    @apply text-orange400 hover:text-orange500 underline underline-offset-4;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply mx-auto w-full max-w-screen-xl px-4;
   }
 }

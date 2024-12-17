@@ -8,7 +8,8 @@ import App from '@/App'
 // import Profile from '@/pages/Profile'
 // import Recipes from '@/pages/Recipes'
 // import Recipe from '@/pages/Recipe'
-// import NotFound from '@/pages/NotFound'
+// import Save from '@/pages/Save'
+import NotFound from '@/pages/NotFound'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -19,9 +20,13 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path="signup" element={<Signup />} />
           <Route path="settings" element={<Settings />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="recipes" element={<Recipes />} />
-          <Route path="recipes/:recipe" element={<Recipe />} />
-          <Route path="*" element={<NotFound />} /> */}
+          <Route path="recipes">
+            <Route index element={<Recipes />} />
+            <Route path=":recipe" element={<Recipe />} />
+            <Route path=":recipe/edit" element={<Save />} />
+            <Route path="create" element={<Save />} />
+          </Route> */}
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
