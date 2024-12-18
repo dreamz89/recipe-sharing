@@ -118,4 +118,14 @@
   .container {
     @apply mx-auto w-full max-w-screen-xl px-4;
   }
+
+  .radial-gradient {
+    background: radial-gradient(
+      ellipse farthest-corner at 100% 0,
+      white,
+      #ffe1d6 60%,
+      #ff7f50 90%,
+      #ff4b0a
+    );
+  }
 }
