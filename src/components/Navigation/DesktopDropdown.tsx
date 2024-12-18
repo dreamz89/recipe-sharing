@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import ArrowBracket from '@/components/icons/ArrowBracket'
@@ -5,6 +6,7 @@ import Gear from '@/components/icons/Gear'
 import Icon from '@/components/icons/Icon'
 import User from '@/components/icons/User'
 import BaseLink from '@/components/ui/Link'
+import useClickOutside from '@/hooks/useClickOutside'
 
 interface Props {
   className: string
@@ -12,10 +14,22 @@ interface Props {
 }
 
 const DesktopDropdown = ({ className, onLinkClick }: Props) => {
+  const ref = useRef<HTMLDivElement>(null)
+
+  const handleClickOutside = (e: MouseEvent | TouchEvent) => {
+    const target = e.target as Element
+    if (!target?.classList.contains('desktopDropdownTrigger')) {
+      onLinkClick()
+    }
+  }
+
+  useClickOutside(ref, handleClickOutside)
+
   return (
     <div
+      ref={ref}
       className={twMerge(
-        'absolute right-0 flex translate-y-[-100%] flex-col gap-y-4 rounded-b-lg bg-white p-4 shadow duration-200',
+        'absolute right-0 z-40 flex translate-y-[-100%] flex-col gap-y-4 rounded-b-lg bg-white p-4 shadow duration-200',
         className
       )}
     >

@@ -11,17 +11,21 @@ import DesktopDropdown from './DesktopDropdown'
 const Navigation = () => {
   const [showMobileDropdown, setShowMobileDropdown] = useState<boolean>(false)
   const [showDesktopDropdown, setShowDesktopDropdown] = useState<boolean>(false)
-  const isAuth = true
+  const isAuthenticated = true
 
   const toggleMobileDropdown = () => {
     setShowMobileDropdown((prevShowMobileDropdown) => !prevShowMobileDropdown)
   }
+
+  const closeMobileDropdown = () => setShowMobileDropdown(false)
 
   const toggleDesktopDropdown = () => {
     setShowDesktopDropdown(
       (prevShowDesktopDropdown) => !prevShowDesktopDropdown
     )
   }
+
+  const closeDesktopDropdown = () => setShowDesktopDropdown(false)
 
   return (
     <>
@@ -43,11 +47,11 @@ const Navigation = () => {
             </BaseLink>
           </div>
           <div className="hidden items-center gap-x-6 lg:flex">
-            {isAuth ? (
+            {isAuthenticated ? (
               <Button
                 variant="primary"
                 onClick={toggleDesktopDropdown}
-                className="w-10 justify-center"
+                className="desktopDropdownTrigger w-10 justify-center"
               >
                 JT
               </Button>
@@ -62,7 +66,7 @@ const Navigation = () => {
               </>
             )}
           </div>
-          <div className="flex items-center lg:hidden">
+          <div className="mobileDropdownTrigger flex items-center lg:hidden">
             <button onClick={toggleMobileDropdown}>
               <Icon>{showMobileDropdown ? <Cross /> : <Burger />}</Icon>
             </button>
@@ -71,12 +75,12 @@ const Navigation = () => {
       </nav>
       <div className="container relative">
         <MobileDropdown
-          className={showMobileDropdown ? 'translate-y-[0]' : ''}
-          onLinkClick={toggleMobileDropdown}
+          className={`lg:hidden ${showMobileDropdown && 'translate-y-[0]'}`}
+          onLinkClick={closeMobileDropdown}
         />
         <DesktopDropdown
-          className={showDesktopDropdown ? 'translate-y-[0]' : ''}
-          onLinkClick={toggleDesktopDropdown}
+          className={`hidden lg:flex ${showDesktopDropdown && 'translate-y-[0]'}`}
+          onLinkClick={closeDesktopDropdown}
         />
       </div>
     </>

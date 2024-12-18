@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import Icon from '@/components/icons/Icon'
@@ -7,6 +8,7 @@ import User from '@/components/icons/User'
 import Book from '@/components/icons/Book'
 import Edit from '@/components/icons/Edit'
 import BaseLink from '@/components/ui/Link'
+import useClickOutside from '@/hooks/useClickOutside'
 
 interface Props {
   className: string
@@ -14,12 +16,23 @@ interface Props {
 }
 
 const MobileDropdown = ({ className, onLinkClick }: Props) => {
+  const ref = useRef<HTMLDivElement>(null)
   const isAuth = true
+
+  const handleClickOutside = (e: MouseEvent | TouchEvent) => {
+    const target = e.target as Element
+    if (!target?.classList.contains('mobileDropdownTrigger')) {
+      onLinkClick()
+    }
+  }
+
+  useClickOutside(ref, handleClickOutside)
 
   return (
     <div
+      ref={ref}
       className={twMerge(
-        'absolute right-0 flex w-full translate-y-[-100%] flex-col gap-y-4 rounded-b-lg bg-white p-4 shadow duration-200',
+        'absolute right-0 z-40 flex w-full translate-y-[-100%] flex-col gap-y-4 rounded-b-lg bg-white p-4 shadow duration-200',
         className
       )}
     >
