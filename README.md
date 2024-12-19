@@ -29,3 +29,5 @@ Log Out by Sunisih from <a href="https://thenounproject.com/browse/icons/term/lo
 Open Book by Ricoster from <a href="https://thenounproject.com/icon/open-book-6997194/" target="_blank" title="Book Icons">Noun Project</a> (CC BY 3.0)  
 Edit by Sentya Irma from <a href="https://thenounproject.com/icon/edit-7252664/" target="_blank" title="edit Icons">Noun Project</a> (CC BY 3.0)  
 Error by Edwin PM from <a href="https://thenounproject.com/icon/error-2504007/" target="_blank" title="Error Icons">Noun Project</a> (CC BY 3.0)
+Eye by FAUZUL KABIR from <a href="https://thenounproject.com/icon/eye-7357431/" target="_blank" title="Eye Icons">Noun Project</a> (CC BY 3.0)
+Eye by Fina Uswania from <a href="https://thenounproject.com/icon/eye-5102785/" target="_blank" title="Eye Icons">Noun Project</a> (CC BY 3.0)
