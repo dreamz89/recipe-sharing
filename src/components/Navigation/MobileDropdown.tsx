@@ -74,7 +74,7 @@ const MobileDropdown = ({ className, onLinkClick }: Props) => {
           </BaseLink>
           <BaseLink
             type="navlink"
-            to="/settings"
+            to="/settings/account"
             className="flex gap-2"
             onLinkClick={onLinkClick}
           >
